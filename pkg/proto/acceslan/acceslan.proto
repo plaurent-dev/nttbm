@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+package site;
+ 
+message SiteRequest {
+    string url = 1;
+}
+ 
+message SiteResponse {
+    string site = 1;
+    bool access = 2;
+    float elapsedtime = 3;
+}
+ 
+service SiteService {
+    rpc Site(SiteRequest) returns (SiteResponse) {}
+}
